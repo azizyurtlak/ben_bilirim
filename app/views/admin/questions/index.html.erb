@@ -1,0 +1,24 @@
+soruların listesi
+<%= link_to 'Yeni soru Oluştur', new_admin_question_path %>
+<form>
+  <input name="query" />
+</form>
+<table>
+  <thead>
+    <tr>
+      <th>Soru</th>
+      <th>İşlemler</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.content %></td>
+        <td>
+          <%= link_to 'Düzenle', edit_admin_question_path(question.id) %>
+          <%= link_to 'Sil', admin_question_path(question.id), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
