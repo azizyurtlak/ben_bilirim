@@ -1,4 +1,9 @@
 <%= form_for [:admin, @question] do |f| %>
-<%= f.text_field :content %>
+<p><%= f.text_field :content %></p>
+<p><%= f.text_field :answers, multiple: true, value: @question.answers[0] %></p>
+<p><%= f.text_field :answers, multiple: true, value: @question.answers[1] %></p>
+<p><%= f.text_field :answers, multiple: true, value: @question.answers[2] %></p>
+<p><%= f.text_field :answers, multiple: true, value: @question.answers[3] %></p>
+<p><%= f.select :correct_answer, [0,1,2,3] %></p>
 <%= f.submit %>
 <% end %>
