@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :questions
   end
 
-  resources :users 
+  resources :users
+  resource :session 
 end
