@@ -10,9 +10,21 @@ class ContestsController < ApplicationController
   def play
     @question_number = session[:question_number]
     @question = Question.order("RANDOM()").first
+    session[:question_id] = @question.id
   end
 
   def answer
-    
+    question = Question.find(session[:question_id])
+    question_number = session[:question_number]
+    if question.correct_answer == params[:answer_index].to_i
+      if question_number == 15
+        render :congrats
+      else
+        session[:question_number] = question_number + 1
+        redirect_to '/play'
+      end
+    else
+      render :fails
+    end
   end
 end

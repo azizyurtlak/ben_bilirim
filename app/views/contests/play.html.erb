@@ -1,7 +1,7 @@
 <h3><%= @question_number %>. <%= @question.content %></h3>
 <ul>
-  <li><a href="#"><%= @question.answers[0] %></a></li>
-  <li><a href="#"><%= @question.answers[1] %></a></li>
-  <li><a href="#"><%= @question.answers[2] %></a></li>
-  <li><a href="#"><%= @question.answers[3] %></a></li>
+  <li><a href="/answer?answer_index=0"><%= @question.answers[0] %></a></li>
+  <li><a href="/answer?answer_index=1"><%= @question.answers[1] %></a></li>
+  <li><a href="/answer?answer_index=2"><%= @question.answers[2] %></a></li>
+  <li><a href="/answer?answer_index=3"><%= @question.answers[3] %></a></li>
 </ul>
