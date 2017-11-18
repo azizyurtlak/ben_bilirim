@@ -1,7 +1,8 @@
 <h1>Kayıt ol</h1>
 <%= form_for  @user do |f| %>
-<%= f.text_field :email %>
-<%= f.text_field :password %>
-<%= f.text_field :name %>
+  <p>Email: <%= f.text_field :email %></p>
+  <p>Şifre: <%= f.text_field :password %></p>
+  <p>Şifre (tekrar): <%= f.text_field :password_confirmation %></p>
+  <p>İsim: <%= f.text_field :name %></p>
 <%= f.submit %>
 <% end %>

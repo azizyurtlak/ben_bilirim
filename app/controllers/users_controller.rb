@@ -8,7 +8,12 @@ class UsersController < ApplicationController
     @user.email = params[:user][:email]
     @user.name = params[:user][:name]
     @user.password = params[:user][:password]
-    @user.save
-    redirect_to('/')
+    @user.password_confirmation = params[:user][:password_confirmation]
+
+    if @user.save
+      redirect_to('/')
+    else
+      render :new
+    end
   end
 end
