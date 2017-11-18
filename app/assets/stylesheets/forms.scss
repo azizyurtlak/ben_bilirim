@@ -1,0 +1,22 @@
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #f2f2f2;
+  padding: 15px;
+
+  h2 {
+    text-align: center;
+  }
+
+  label {
+    width: 100%;
+  }
+
+  div {
+    margin-bottom: 10px;
+  }
+
+  .error {
+    color: red;
+  }
+}

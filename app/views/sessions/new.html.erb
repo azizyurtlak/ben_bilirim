@@ -1,8 +1,17 @@
-<h1>Giriş</h1>
-<%= form_tag '/session' do %>
+<%= form_tag  '/session', class: 'form' do |f| %>
+  <h2>Giriş</h2>
+  <div>
+    <label>
+      Email:
+      <%= text_field_tag :email, '', class: 'form-control' %>
+    </label>
+  </div>
+  <div>
+    <label>
+      Şifre:
+      <%= password_field_tag :password, '', class: 'form-control' %>
+    </label>
+  </div>
 
-  Email: <%= text_field_tag :email %>
-  Şifre: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
+  <%= submit_tag 'Giriş', class: 'btn btn-primary btn-block' %>
 <% end %>

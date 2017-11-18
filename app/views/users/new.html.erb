@@ -1,8 +1,48 @@
-<h1>Kayıt ol</h1>
-<%= form_for  @user do |f| %>
-  <p>Email: <%= f.text_field :email %></p>
-  <p>Şifre: <%= f.text_field :password %></p>
-  <p>Şifre (tekrar): <%= f.text_field :password_confirmation %></p>
-  <p>İsim: <%= f.text_field :name %></p>
-<%= f.submit %>
+<%= form_for  @user, html: { class: 'form' } do |f| %>
+  <h2>Kayıt ol</h2>
+  <div>
+    <label>
+      Email:
+      <%= f.text_field :email, class: 'form-control' %>
+      <% if @user.errors[:email] %>
+        <span class="error">
+          <%= @user.errors[:email].join(', ') %>
+        </span>
+      <% end %>
+    </label>
+  </div>
+  <div>
+    <label>
+      Şifre:
+      <%= f.password_field :password, class: 'form-control' %>
+      <% if @user.errors[:password] %>
+        <span class="error">
+          <%= @user.errors[:password].join(', ') %>
+        </span>
+      <% end %>
+    </label>
+  </div>
+  <div>
+    <label>
+      Şifre (tekrar):
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <% if @user.errors[:password_confirmation] %>
+        <span class="error">
+          <%= @user.errors[:password_confirmation].join(', ') %>
+        </span>
+      <% end %>
+    </label>
+  </div>
+  <div>
+    <label>
+      İsim:
+      <%= f.text_field :name, class: 'form-control' %>
+      <% if @user.errors[:name] %>
+        <span class="error">
+          <%= @user.errors[:name].join(', ') %>
+        </span>
+      <% end %>
+    </label>
+  </div>
+  <%= f.submit class: 'btn btn-primary btn-block' %>
 <% end %>
