@@ -1,7 +1,9 @@
-<p>
+<div class="jumbotron text-center">
+  <h1 class="display-3">Ben Bilirim'e Hoşgeldiniz!</h1>
   <%= image_tag 'home.jpg' %>
-</p>
-
-<%= link_to 'Giriş Yap', new_session_path %>
-|
-<%= link_to 'Kayıt Ol', new_user_path %>
+  <hr class="my-4">
+  <p class="lead">
+    <%= link_to 'Giriş Yap', new_session_path, class: 'btn btn-primary' %>
+    <%= link_to 'Kayıt Ol', new_user_path, class: 'btn btn-primary' %>
+  </p>
+</div>
