@@ -1,2 +1,6 @@
+<% if params[:reason] == 'time' %>
+Süreniz doldu!
+<% else %>
 Cevabınız doğru değildir.
-<a href="/start">Tekrar dene</a> 
+<% end %>
+<a href="/start">Tekrar dene</a>

@@ -24,7 +24,10 @@ class ContestsController < ApplicationController
         redirect_to '/play'
       end
     else
-      render :fails
+      redirect_to '/fails'
     end
+  end
+
+  def fails
   end
 end
