@@ -1,7 +1,7 @@
 class Admin::QuestionsController < Admin::BaseController
   def index
     if params[:query]
-      @questions = Question.where('content like ?', "%#{params[:query]}%")
+      @questions = Question.where('content ilike ?', "%#{params[:query]}%")
     else
       @questions = Question.all
     end
