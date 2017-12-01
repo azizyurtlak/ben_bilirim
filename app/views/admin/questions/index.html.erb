@@ -28,7 +28,7 @@
         <td><%= question.content %></td>
         <td>
           <%= link_to 'Düzenle', edit_admin_question_path(question.id) %>
-          <%= link_to 'Sil', admin_question_path(question.id), method: :delete %>
+          <%= link_to 'Sil', admin_question_path(question.id), method: :delete, data: { confirm: 'Emin misiniz?' } %>
         </td>
       </tr>
     <% end %>
