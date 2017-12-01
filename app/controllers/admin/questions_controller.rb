@@ -1,4 +1,4 @@
-class Admin::QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   def index
     if params[:query]
       @questions = Question.where('content like ?', "%#{params[:query]}%")
@@ -19,7 +19,6 @@ class Admin::QuestionsController < ApplicationController
     @question.correct_answer = params[:question][:correct_answer]
     @question.save
     redirect_to admin_questions_path
-
   end
 
   def edit
