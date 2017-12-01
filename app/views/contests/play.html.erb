@@ -3,12 +3,18 @@
     <%= @question_number %>. <%= @question.content %>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="/answer?answer_index=0"><%= @question.answers[0] %></a></li>
-    <li class="list-group-item"><a href="/answer?answer_index=1"><%= @question.answers[1] %></a></li>
-    <li class="list-group-item"><a href="/answer?answer_index=2"><%= @question.answers[2] %></a></li>
-    <li class="list-group-item"><a href="/answer?answer_index=3"><%= @question.answers[3] %></a></li>
+    <li class="list-group-item"><a href="/answer?answer_index=0" class="btn <%= 'disabled' if @wrong_answers&.include?(0) %>"><%= @question.answers[0] %></a></li>
+    <li class="list-group-item"><a href="/answer?answer_index=1" class="btn <%= 'disabled' if @wrong_answers&.include?(1) %>"><%= @question.answers[1] %></a></li>
+    <li class="list-group-item"><a href="/answer?answer_index=2" class="btn <%= 'disabled' if @wrong_answers&.include?(2) %>"><%= @question.answers[2] %></a></li>
+    <li class="list-group-item"><a href="/answer?answer_index=3" class="btn <%= 'disabled' if @wrong_answers&.include?(3) %>"><%= @question.answers[3] %></a></li>
   </ul>
   <div class="card-footer">
-    <span id="timer">15</span> saniye kaldi
+    <div id="time-container">
+      <span id="timer">15</span> saniye kaldi
+    </div>
+    <div id="joker-buttons">
+      <a href="/play?joker=pass" class="btn btn-success <%= 'disabled' if !session[:pass_joker] %>">Pas</a>
+      <a href="/play?joker=half" class="btn btn-success <%= 'disabled' if !session[:half_joker] %>">50%</a>
+    </div>
   </div>
 </div>

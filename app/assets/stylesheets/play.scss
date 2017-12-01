@@ -1,0 +1,17 @@
+#play {
+  .card-footer {
+    display: flex;
+    align-items: center;
+
+    #time-container {
+      flex: 1;
+    }
+  }
+
+  .list-group {
+    a.disabled {
+      text-decoration: line-through;
+      color: #bbb;
+    }
+  }
+}
